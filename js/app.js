@@ -144,6 +144,16 @@ function makeSliders(device) {
         slider.setAttribute("name", param.name);
         slider.setAttribute("min", param.min);
         slider.setAttribute("max", param.max);
+
+        /*
+        let paisajeDiv = document.createElement("div");
+        sliderContainer.appendChild(paisajeDiv);
+        if (slider.id.includes('paisaje')) {
+            paisajeDiv.appendChild(slider);
+        }
+        */
+
+
         if (param.steps > 1) {
             slider.setAttribute("step", (param.max - param.min) / (param.steps - 1));
         } else {

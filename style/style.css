@@ -20,6 +20,17 @@ h2, em {
     max-width: 540px;
 }
 
+.cinco select {
+    margin: 3px 0 12px 4px;
+    padding: 7px;
+    border-radius: 50px;
+    background-color: #FF355D;
+    border: 7px solid #FFF5E0;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: #FFD1DA;
+}
+
 #rnbo-parameter-sliders {
     display: flex;
     flex-direction: column;
@@ -31,4 +42,41 @@ h2, em {
 
 #rnbo-parameter-sliders > div > input:first-of-type {
     flex-grow: 1;
+}
+
+.slider-container {
+    position: relative;
+    min-height: 70px;
+    width: auto;
+    margin: 3px;
+}
+
+input[type="range"] {
+    appearance: none; /* -webkit-appearance */
+    width: auto;
+    height: 70px;
+    background-color: #FFD1DA;
+    border-radius: 7px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 70px;
+    height: 70px;
+    background-color: #FFF5E0;
+    border: 14px solid #22668D;
+    border-radius: 50%;
+    cursor: grab;
+    z-index: 3;
+}
+
+#paisaje\/gainwave {
+    background-color: #FFF5E0;
+    /* margin-top: 34px; */
+}
+
+#gainnoise::-webkit-slider-thumb {
+    background-color: #FFF5E0;
+    border: 14px solid #FF355D;
+    border-radius: 7px;
 }
