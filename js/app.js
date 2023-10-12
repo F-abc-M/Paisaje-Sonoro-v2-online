@@ -152,7 +152,7 @@ function makeSliders(device) {
         slider.setAttribute("value", param.value);
 
         // Make a settable text input display for the value
-        text.setAttribute("value", param.value.toFixed(1));
+        text.setAttribute("value", param.value.toFixed(3));
         text.setAttribute("type", "text");
 
         // Make each slider control its parameter
@@ -162,7 +162,7 @@ function makeSliders(device) {
         slider.addEventListener("pointerup", () => {
             isDraggingSlider = false;
             slider.value = param.value;
-            text.value = param.value.toFixed(1);
+            text.value = param.value.toFixed(3);
         });
         slider.addEventListener("input", () => {
             let value = Number.parseFloat(slider.value);
@@ -195,7 +195,7 @@ function makeSliders(device) {
     device.parameterChangeEvent.subscribe(param => {
         if (!isDraggingSlider)
             uiElements[param.id].slider.value = param.value;
-        uiElements[param.id].text.value = param.value.toFixed(1);
+        uiElements[param.id].text.value = param.value.toFixed(3);
     });
 }
 
