@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pcamp",
+    "file": "media/campanas.mp3"
+  },
+  {
+    "id": "psema",
+    "file": "media/semaforo.mp3"
+  },
+  {
+    "id": "pamb",
+    "file": "media/ambulancia.mp3"
+  },
+  {
+    "id": "ptren",
+    "file": "media/tren.mp3"
+  },
+  {
+    "id": "pavion",
+    "file": "media/avion.mp3"
+  },
+  {
+    "id": "prueba",
+    "file": "media/acorde0.mp3"
+  }
+]
