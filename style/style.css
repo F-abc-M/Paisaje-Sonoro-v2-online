@@ -13,11 +13,13 @@ html, body {
 
 h2, em {
     width: 100%;
+    display: none;
+    visibility: hidden;
 }
 
 #rnbo-root {
-    margin: auto;
-    max-width: 540px;
+    margin: 12px;
+    max-width: 98vw;
 }
 
 .cinco select {
@@ -33,50 +35,130 @@ h2, em {
 
 #rnbo-parameter-sliders {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    overflow: scroll;
 }
 
 #rnbo-parameter-sliders > div {
     display: flex;
-}
-
-#rnbo-parameter-sliders > div > input:first-of-type {
-    flex-grow: 1;
-}
-
-.slider-container {
-    position: relative;
-    min-height: 70px;
-    width: auto;
-    margin: 3px;
+    margin: 0;
+    padding: 0;
 }
 
 input[type="range"] {
+    margin: 0;
+    padding: 0;
     appearance: none; /* -webkit-appearance */
     width: auto;
-    height: 70px;
+    height: 21px;
     background-color: #FFD1DA;
-    border-radius: 7px;
+    border: 7px solid rgb(34, 34, 34);
 }
 
 input[type="range"]::-webkit-slider-thumb {
     appearance: none;
-    width: 70px;
-    height: 70px;
+    width: 21px;
+    height: 21px;
     background-color: #FFF5E0;
-    border: 14px solid #22668D;
+    border: 7px solid #22668D;
     border-radius: 50%;
     cursor: grab;
     z-index: 3;
 }
 
-#paisaje\/gainwave {
+#paisaje\/gainwave,#gainnoise,#thegran\/gain {
     background-color: #FFF5E0;
-    /* margin-top: 34px; */
+    width: 230px;
+    height: 44px;
 }
 
-#gainnoise::-webkit-slider-thumb {
+#paisaje\/gainwave::-webkit-slider-thumb,#gainnoise::-webkit-slider-thumb,#thegran\/gain::-webkit-slider-thumb {
     background-color: #FFF5E0;
-    border: 14px solid #FF355D;
-    border-radius: 7px;
+    border: 7px solid #FF355D;
+    border-radius: 0px;
 }
+
+#paisaje\/playcamp,#paisaje\/playsema,#paisaje\/playamb,#paisaje\/playtren,#paisaje\/playavion {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+}
+
+#paisaje\/playcamp::-webkit-slider-thumb,#paisaje\/playsema::-webkit-slider-thumb,#paisaje\/playamb::-webkit-slider-thumb,#paisaje\/playtren::-webkit-slider-thumb,#paisaje\/playavion::-webkit-slider-thumb {
+    visibility: hidden;
+}
+
+#paisaje\/stopcamp,#paisaje\/stopsema,#paisaje\/stopamb,#paisaje\/stoptren,#paisaje\/stopavion {
+    width: 30px;
+    height: 100px;
+    background-color: tomato;
+}
+
+#paisaje\/stopcamp::-webkit-slider-thumb,#paisaje\/stopsema::-webkit-slider-thumb,#paisaje\/stopamb::-webkit-slider-thumb,#paisaje\/stoptren::-webkit-slider-thumb,#paisaje\/stopavion::-webkit-slider-thumb {
+    visibility: hidden;
+}
+
+.rotate {
+    transition: all 0.7s ease-in-out;
+    animation: rotate 12s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+/*
+.gains {
+    background-color: tomato;
+    width: auto;
+    height: auto;
+}
+
+.allNoise {
+    background-color: gray;
+    width: auto;
+    height: auto;
+}
+
+.campanas {
+    background-color: yellow;
+    width: auto;
+    height: auto;
+}
+
+.semaforo {
+    background-color: yellowgreen;
+    width: auto;
+    height: auto;
+}
+
+.ambulancia {
+    background-color: crimson;
+    width: auto;
+    height: auto;
+}
+
+.tren {
+    background-color: orange;
+    width: auto;
+    height: auto;
+}
+
+.avion {
+    background-color: lightseagreen;
+    width: auto;
+    height: auto;
+}
+
+.granular {
+    background-color: purple;
+    width: auto;
+    height: auto;
+}
+*/

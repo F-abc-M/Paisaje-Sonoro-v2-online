@@ -85,7 +85,7 @@
         "type": "ParameterTypeNumber",
         "index": 4,
         "name": "ondacam",
-        "paramId": "ondadelpaisa/ondacam",
+        "paramId": "ondadelpaisa/ondacamp",
         "minimum": 0.003,
         "maximum": 1,
         "exponent": 1,

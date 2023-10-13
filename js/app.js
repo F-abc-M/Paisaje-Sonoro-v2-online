@@ -72,7 +72,7 @@ async function setup() {
     device.node.connect(outputNode);
 
     // (Optional) Extract the name and rnbo version of the patcher from the description
-    document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "Unnamed Patcher") + " (v" + patcher.desc.meta.rnboversion + ")";
+    // document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "Unnamed Patcher") + " (v" + patcher.desc.meta.rnboversion + ")";
 
     // (Optional) Automatically create sliders for the device parameters
     makeSliders(device);
@@ -127,9 +127,9 @@ function makeSliders(device) {
         let slider = document.createElement("input");
         let text = document.createElement("input");
         let sliderContainer = document.createElement("div");
-        sliderContainer.appendChild(label);
+        //sliderContainer.appendChild(label);
         sliderContainer.appendChild(slider);
-        sliderContainer.appendChild(text);
+        //sliderContainer.appendChild(text);
 
         // Add a name for the label
         label.setAttribute("name", param.name);
@@ -145,14 +145,72 @@ function makeSliders(device) {
         slider.setAttribute("min", param.min);
         slider.setAttribute("max", param.max);
 
-        /*
-        let paisajeDiv = document.createElement("div");
-        sliderContainer.appendChild(paisajeDiv);
-        if (slider.id.includes('paisaje')) {
-            paisajeDiv.appendChild(slider);
-        }
-        */
+        slider.addEventListener('pointerdown', () => {
+            if (slider.id.includes('play') || slider.id.includes('stop')) {
+                slider.classList.add('rotate');
+                setTimeout(() => {
+                    slider.classList.remove('rotate');
+                }, 12500)
+            }
+        })
 
+        /* divs por grupos de elementos
+        let gainDiv = document.createElement("div");
+        sliderContainer.appendChild(gainDiv);
+        gainDiv.classList.add('gains');
+        if (slider.id.includes('gain')) {
+            gainDiv.append(slider);
+        }
+
+        let noiseDiv = document.createElement("div");
+        sliderContainer.appendChild(noiseDiv);
+        noiseDiv.classList.add("allNoise");
+        if (slider.id.includes('freq')) {
+            noiseDiv.append(slider);
+        }
+
+        let campanasDiv = document.createElement("div");
+        sliderContainer.appendChild(campanasDiv);
+        campanasDiv.classList.add("campanas");
+        if (slider.id.includes('camp')) {
+            campanasDiv.append(slider);
+        }
+
+        let semaforoDiv = document.createElement("div");
+        sliderContainer.appendChild(semaforoDiv);
+        semaforoDiv.classList.add("semaforo");
+        if (slider.id.includes('sema')) {
+            semaforoDiv.append(slider);
+        }
+
+        let ambulanciaDiv = document.createElement("div");
+        sliderContainer.appendChild(ambulanciaDiv);
+        ambulanciaDiv.classList.add("ambulancia");
+        if (slider.id.includes('amb')) {
+            ambulanciaDiv.append(slider);
+        }
+
+        let trenDiv = document.createElement("div");
+        sliderContainer.appendChild(trenDiv);
+        trenDiv.classList.add("tren");
+        if (slider.id.includes('tren')) {
+            trenDiv.append(slider);
+        }
+
+        let avionDiv = document.createElement("div");
+        sliderContainer.appendChild(avionDiv);
+        avionDiv.classList.add("avion");
+        if (slider.id.includes('avio')) {
+            avionDiv.append(slider);
+        }
+
+        let granularDiv = document.createElement("div");
+        sliderContainer.appendChild(granularDiv);
+        granularDiv.classList.add("granular");
+        if (slider.id.includes('granulator')) {
+            granularDiv.append(slider);
+        }
+        termina sección de divs */
 
         if (param.steps > 1) {
             slider.setAttribute("step", (param.max - param.min) / (param.steps - 1));
@@ -220,7 +278,7 @@ function loadPresets(device, patcher) {
     let presetSelect = document.getElementById("preset-select");
     presets.forEach((preset, index) => {
         const option = document.createElement("option");
-        option.innerText = preset.name;
+        option.innerText = preset.name; // CAMBIAR NOMBRE A TRIGGER
         option.value = index;
         presetSelect.appendChild(option);
     });
