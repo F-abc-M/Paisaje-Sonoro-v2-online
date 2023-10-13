@@ -68,13 +68,13 @@ input[type="range"]::-webkit-slider-thumb {
     z-index: 3;
 }
 
-#paisaje\/gainwave,#gainnoise,#thegran\/gain {
+#paisaje\/gainwave,#gainnoise,#thegranulator\/gaingran {
     background-color: #FFF5E0;
     width: 230px;
     height: 44px;
 }
 
-#paisaje\/gainwave::-webkit-slider-thumb,#gainnoise::-webkit-slider-thumb,#thegran\/gain::-webkit-slider-thumb {
+#paisaje\/gainwave::-webkit-slider-thumb,#gainnoise::-webkit-slider-thumb,#thegranulator\/gaingran::-webkit-slider-thumb {
     background-color: #FFF5E0;
     border: 7px solid #FF355D;
     border-radius: 0px;
