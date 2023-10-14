@@ -1,11 +1,9 @@
 html, body {
     margin: 0;
     padding: 0;
+    position: fixed;
 }
-#rnbo-root {
-    height: 100vh;
-    width: 100vw;
-}
+
 #background {
     position: absolute;
     z-index: -1;
@@ -20,6 +18,7 @@ h2, em {
 #rnbo-root {
     margin: 12px;
     max-width: 98vw;
+    box-sizing: border-box;
 }
 
 .cinco select {
@@ -37,8 +36,7 @@ h2, em {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: baseline;
-    overflow: scroll;
+    align-items: self-start;
 }
 
 #rnbo-parameter-sliders > div {
@@ -55,6 +53,7 @@ input[type="range"] {
     height: 21px;
     background-color: #FFD1DA;
     border: 7px solid rgb(34, 34, 34);
+    transition: 0.7s ease-in-out;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -68,41 +67,597 @@ input[type="range"]::-webkit-slider-thumb {
     z-index: 3;
 }
 
-#paisaje\/gainwave,#gainnoise,#thegranulator\/gaingran {
-    background-color: #FFF5E0;
+#gainnoise {
+    background-color: #272829;
     width: 230px;
     height: 44px;
 }
 
-#paisaje\/gainwave::-webkit-slider-thumb,#gainnoise::-webkit-slider-thumb,#thegranulator\/gaingran::-webkit-slider-thumb {
-    background-color: #FFF5E0;
-    border: 7px solid #FF355D;
-    border-radius: 0px;
+#cyclefreq {
+    border-radius: 50px;
+    transform: rotate(10deg);
+    background-color: #D8D9DA;
 }
 
-#paisaje\/playcamp,#paisaje\/playsema,#paisaje\/playamb,#paisaje\/playtren,#paisaje\/playavion {
+#phascycfreq {
+    border-radius: 50px;
+    transform: rotate(-10deg);
+    background-color: #61677A;
+}
+
+#ondadelpaisa\/ondacampaon {
+    border-radius: 50%;
+    background-color: #FF8400;
+}
+
+#ondadelpaisa\/ondacampaon:hover {
+    border-radius: 3px;
+    scale: 2;
+    rotate: 3deg;
+    border: none;
+}
+
+#ondadelpaisa\/ondacamp {
+    width: 80px;
+    height: 80px;
+    transform: rotate(90deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #4F200D;
+}
+
+#ondadelpaisa\/ondacamp:hover {
+    border-radius: 50% 50% 0 50%;
+}
+
+#ondadelpaisa\/phascyclecamp {
+    width: 80px;
+    height: 80px;
+    transform: rotate(270deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #FFD93D;
+}
+
+#ondadelpaisa\/phascyclecamp:hover {
+    border-radius: 50% 50% 0 50%;
+}
+
+#ondadelpaisa\/pancamp {
+    height: 5px;
+    border: none;
+    transform: rotate(90deg);
+    background-color: #FF8400;
+}
+
+#ondadelpaisa\/pancamp:hover {
+    rotate: 98deg;
+    scale: 1.2;
+}
+
+#ondadelpaisa\/pancamp::-webkit-slider-thumb {
+    background-color: transparent;
+    border-top: 17px solid transparent;
+    border-right: 17px solid lightblue;
+    border-bottom: 17px solid transparent;
+}
+
+#ondadelpaisa\/ondasemaon {
+    border-radius: 50%;
+    background-color: #FF1700;
+}
+
+#ondadelpaisa\/ondasemaon:hover {
+    border-radius: 3px;
+    rotate: -57deg;
+    scale: 2;
+    border: none;
+}
+
+#ondadelpaisa\/ondasema {
+    width: 80px;
+    height: 80px;
+    transform: rotate(90deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #FF8E00;
+}
+
+#ondadelpaisa\/ondasema:hover {
+    border-radius: 50% 50% 0 50%;
+    rotate: 30deg;
+}
+
+#ondadelpaisa\/phascysema {
+    width: 80px;
+    height: 80px;
+    transform: rotate(270deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #FFE400;
+}
+
+#ondadelpaisa\/phascysema:hover {
+    border-radius: 50% 50% 0 50%;
+    rotate: -7deg;
+}
+
+#ondadelpaisa\/pansema {
+    height: 5px;
+    border: none;
+    transform: rotate(90deg);
+    background-color: #06FF00;
+}
+
+#ondadelpaisa\/pansema:hover {
+    rotate: -365deg;
+    scale: 1.5;
+}
+
+#ondadelpaisa\/pansema::-webkit-slider-thumb {
+    background-color: transparent;
+    border-top: 17px solid transparent;
+    border-right: 17px solid lightblue;
+    border-bottom: 17px solid transparent;
+}
+
+#ondadelpaisa\/ondaambuon {
+    border-radius: 50%;
+    background-color: #FFCC70;
+}
+
+#ondadelpaisa\/ondaambuon:hover {
+    border-radius: 3px;
+    rotate: 57deg;
+    scale: 2;
+    border: none;
+}
+
+#ondadelpaisa\/ondaambu {
+    width: 80px;
+    height: 80px;
+    transform: rotate(90deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #FFFADD;
+}
+
+#ondadelpaisa\/ondaambu:hover {
+    border-radius: 50% 0 0 50%;
+    rotate: -9deg;
+}
+
+#ondadelpaisa\/phascycambu {
+    width: 80px;
+    height: 80px;
+    transform: rotate(270deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #8ECDDD;
+}
+
+#ondadelpaisa\/phascycambu:hover {
+    border-radius: 50% 0 0 50%;
+    rotate: 13deg;
+}
+
+#ondadelpaisa\/panambu {
+    height: 5px;
+    border: none;
+    transform: rotate(90deg);
+    background-color: #4F709C;
+}
+
+#ondadelpaisa\/panambu:hover {
+    rotate: -65deg;
+    scale: 1.2;
+}
+
+#ondadelpaisa\/panambu::-webkit-slider-thumb {
+    background-color: transparent;
+    border-top: 17px solid transparent;
+    border-right: 17px solid lightblue;
+    border-bottom: 17px solid transparent;
+}
+
+#ondadelpaisa\/panambu2 {
+    height: 5px;
+    border: none;
+    transform: rotate(270deg);
+    background-color: #22668D;
+}
+
+#ondadelpaisa\/panambu2:hover {
+    rotate: 65deg;
+    scale: 1.7;
+}
+
+#ondadelpaisa\/panambu2::-webkit-slider-thumb {
+    background-color: transparent;
+    border-top: 17px solid transparent;
+    border-right: 17px solid lightblue;
+    border-bottom: 17px solid transparent;
+}
+
+#ondadelpaisa\/ondatrenon {
+    border-radius: 50%;
+    background-color: #E5E5CB;
+}
+
+#ondadelpaisa\/ondatrenon:hover {
+    border-radius: 3px;
+    rotate: 92deg;
+    scale: 2;
+    border: none;
+}
+
+#ondadelpaisa\/ondatren {
+    width: 80px;
+    height: 80px;
+    transform: rotate(90deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #1A120B;
+}
+
+#ondadelpaisa\/ondatren:hover {
+    border-radius: 50% 30% 0 7%;
+    rotate: 26deg;
+}
+
+#ondadelpaisa\/phascytren {
+    width: 80px;
+    height: 80px;
+    transform: rotate(270deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #D5CEA3;
+}
+
+#ondadelpaisa\/phascytren:hover {
+    border-radius: 0 30% 50% 7%;
+    rotate: -31deg;
+}
+
+#ondadelpaisa\/pantren {
+    height: 5px;
+    border: none;
+    transform: rotate(90deg);
+    background-color: #3C2A21;
+}
+
+#ondadelpaisa\/pantren:hover {
+    rotate: -172deg;
+    scale: 1.2;
+}
+
+#ondadelpaisa\/pantren::-webkit-slider-thumb {
+    background-color: transparent;
+    border-top: 17px solid transparent;
+    border-right: 17px solid lightblue;
+    border-bottom: 17px solid transparent;
+}
+
+#ondadelpaisa\/ondavion {
+    border-radius: 50%;
+    background-color: #B6FFFA;
+}
+
+#ondadelpaisa\/ondavion:hover {
+    border-radius: 3px;
+    rotate: -192deg;
+    scale: 2;
+    border: none;
+}
+
+#ondadelpaisa\/ondaavio {
+    width: 80px;
+    height: 80px;
+    transform: rotate(90deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #687EFF;
+}
+
+#ondadelpaisa\/ondaavio:hover {
+    border-radius: 0 100% 7% 50%;
+    rotate: -31deg;
+}
+
+#ondadelpaisa\/phasavio {
+    width: 80px;
+    height: 80px;
+    transform: rotate(270deg);
+    border-radius: 50% 50% 50% 0;
+    background-color: #80B3FF;
+}
+
+#ondadelpaisa\/phasavio:hover {
+    border-radius: 0 100% 7% 50%;
+    rotate: 31deg;
+}
+
+#ondadelpaisa\/panavion {
+    height: 5px;
+    border: none;
+    transform: rotate(90deg);
+    background-color: #98E4FF;
+}
+
+#ondadelpaisa\/panavion:hover {
+    rotate: 198deg;
+    scale: 1.7;
+}
+
+#ondadelpaisa\/panavion::-webkit-slider-thumb {
+    background-color: transparent;
+    border-top: 17px solid transparent;
+    border-right: 17px solid lightblue;
+    border-bottom: 17px solid transparent;
+}
+
+#paisaje\/gainwave {
+    background-color: #1A120B;
+    width: 230px;
+    height: 44px;
+}
+
+#paisaje\/gainwave::-webkit-slider-thumb,
+#gainnoise::-webkit-slider-thumb,
+#thegranulator\/gaingran::-webkit-slider-thumb {
+    background-color: #FF355D;
+    border: 7px solid #22668D;
+    border-radius: 0px;
+    height: 44px;
+}
+
+#paisaje\/playcamp {
+    background-color: #FFD93D;
+}
+
+#paisaje\/stopcamp {
+    background-color: #4F200D;
+}
+
+#paisaje\/numcamp {
+    background-color: #F6F1E9;
+}
+
+#paisaje\/numcamp:hover {
+    scale: 1.7;
+    border: none;
+    border-radius: 3px;
+}
+
+#paisaje\/playsema {
+    background-color: #06FF00;
+}
+
+#paisaje\/stopsema {
+    background-color: #FF1700;
+}
+
+#paisaje\/numsema {
+    background-color: #FFE400;
+}
+
+#paisaje\/numsema:hover {
+    scale: 1.7;
+    border: none;
+    border-radius: 3px;
+}
+
+#paisaje\/playamb {
+    background-color: #22668D;
+}
+
+#paisaje\/stopamb {
+    background-color: #FFCC70;
+}
+
+#paisaje\/numamb {
+    background-color: #8ECDDD;
+}
+
+#paisaje\/numamb:hover {
+    scale: 1.7;
+    border: none;
+    border-radius: 3px;
+}
+
+#paisaje\/playtren {
+    background-color: #D5CEA3;
+}
+
+#paisaje\/stoptren {
+    background-color: #3C2A21;
+}
+
+#paisaje\/numtren {
+    background-color: #E5E5CB;
+}
+
+#paisaje\/numtren:hover {
+    scale: 1.7;
+    border: none;
+    border-radius: 3px;
+}
+
+#paisaje\/playavion {
+    background-color: #687EFF;
+}
+
+#paisaje\/stopavion {
+    background-color: #B6FFFA;
+}
+
+#paisaje\/numavion {
+    background-color: #80B3FF;
+}
+
+#paisaje\/numavion:hover {
+    scale: 1.7;
+    border: none;
+    border-radius: 3px;
+}
+
+#paisaje\/playcamp,
+#paisaje\/playsema,
+#paisaje\/playamb,
+#paisaje\/playtren,
+#paisaje\/playavion {
     width: 100px;
     height: 100px;
-    background-color: lightgreen;
 }
 
-#paisaje\/playcamp::-webkit-slider-thumb,#paisaje\/playsema::-webkit-slider-thumb,#paisaje\/playamb::-webkit-slider-thumb,#paisaje\/playtren::-webkit-slider-thumb,#paisaje\/playavion::-webkit-slider-thumb {
-    visibility: hidden;
-}
-
-#paisaje\/stopcamp,#paisaje\/stopsema,#paisaje\/stopamb,#paisaje\/stoptren,#paisaje\/stopavion {
+#paisaje\/stopcamp,
+#paisaje\/stopsema,
+#paisaje\/stopamb,
+#paisaje\/stoptren,
+#paisaje\/stopavion {
     width: 30px;
     height: 100px;
-    background-color: tomato;
 }
 
-#paisaje\/stopcamp::-webkit-slider-thumb,#paisaje\/stopsema::-webkit-slider-thumb,#paisaje\/stopamb::-webkit-slider-thumb,#paisaje\/stoptren::-webkit-slider-thumb,#paisaje\/stopavion::-webkit-slider-thumb {
+#paisaje\/playcamp::-webkit-slider-thumb,
+#paisaje\/playsema::-webkit-slider-thumb,
+#paisaje\/playamb::-webkit-slider-thumb,
+#paisaje\/playtren::-webkit-slider-thumb,
+#paisaje\/playavion::-webkit-slider-thumb,
+#paisaje\/stopcamp::-webkit-slider-thumb,
+#paisaje\/stopsema::-webkit-slider-thumb,
+#paisaje\/stopamb::-webkit-slider-thumb,
+#paisaje\/stoptren::-webkit-slider-thumb,
+#paisaje\/stopavion::-webkit-slider-thumb  {
     visibility: hidden;
+}
+
+#thegranulator\/density {
+    border-radius: 50px 0 0 0;
+    background-color: #F94C66;
+}
+
+#thegranulator\/grain_size {
+    border-radius: 0 50px 0 0;
+    background-color: #BD4291;
+}
+
+#thegranulator\/pitch {
+    border-radius: 0 0 0 50px;
+    background-color: #BD4291;
+}
+
+#thegranulator\/position {
+    border-radius: 0 0 50px 0;
+    background-color: #F94C66;
+}
+
+#thegranulator\/spray {
+    height: 5px;
+    border: none;
+    transform: rotate(45deg);
+    background-color: #FFC54D;
+}
+
+#thegranulator\/spread {
+    height: 5px;
+    border: none;
+    transform: rotate(45deg);
+    background-color: #FFC54D;
+}
+
+#thegranulator\/stereo_spread {
+    height: 5px;
+    border: none;
+    transform: rotate(135deg);
+    background-color: #FFC54D;
+}
+
+#thegranulator\/gaingran {
+    background-color: #53BF9D;
+    width: 230px;
+    height: 44px;
+}
+
+.visualNoise {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('../img/noise0.jpg') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation 3s infinite; /* nombre de la animación */
+    opacity: .3;
+    visibility: visible;
+    z-index: -1;
+  }
+
+@keyframes bg-animation {
+      0% { transform: translate(0,0) }
+      10% { transform: translate(-5%,-5%) }
+      20% { transform: translate(-10%,5%) }
+      30% { transform: translate(5%,-10%) }
+      40% { transform: translate(-5%,15%) }
+      50% { transform: translate(-10%,5%) }
+      60% { transform: translate(15%,0) }
+      70% { transform: translate(0,10%) }
+      80% { transform: translate(-15%,0) }
+      90% { transform: translate(10%,5%) }
+      100% { transform: translate(0, 0) }
+}
+
+.visualGran {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('../img/noise3.jpg') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation-gran 13s infinite; /* nombre de la animación */
+    opacity: .3;
+    visibility: visible;
+    z-index: -1;
+}
+
+@keyframes bg-animation-gran {
+      0% { transform: translate(0,0) }
+      10% { transform: translate(-5%,-5%) }
+      20% { transform: translate(-10%,5%) }
+      30% { transform: translate(5%,-10%) }
+      40% { transform: translate(-5%,15%) }
+      50% { transform: translate(-10%,5%) }
+      60% { transform: translate(15%,0) }
+      70% { transform: translate(0,10%) }
+      80% { transform: translate(-15%,0) }
+      90% { transform: translate(10%,5%) }
+      100% { transform: translate(0, 0) }
+}
+
+.surprise {
+    animation: the-surprise 7s;
+}
+
+@keyframes the-surprise {
+    0% {
+        scale: 0;
+    }
+    25% {
+        scale: 70%;
+        rotate: 90deg;
+        opacity: 0.25;
+    }
+    50% {
+        scale: 150%;
+        rotate: 180deg;
+        opacity: 0.5;
+    }
+    100% {
+        scale: 0;
+        rotate: 360deg;
+        opacity: 0;
+    }
 }
 
 .rotate {
     transition: all 0.7s ease-in-out;
-    animation: rotate 12s;
+    animation: rotate 7s;
 }
 
 @keyframes rotate {

@@ -145,6 +145,12 @@ function makeSliders(device) {
         slider.setAttribute("min", param.min);
         slider.setAttribute("max", param.max);
 
+        // the first animation
+        let surprise = document.querySelector('body');
+        surprise.addEventListener('pointerdown', () => {
+            surprise.classList.add('surprise');
+        })
+
         slider.addEventListener('pointerdown', () => {
             if (slider.id.includes('play') || slider.id.includes('stop')) {
                 slider.classList.add('rotate');
@@ -251,6 +257,26 @@ function makeSliders(device) {
                 }
             }
         });
+
+        // the backgroud for noise
+        slider.addEventListener('pointerup', () => {
+            let theBackgroundForNoise = document.getElementById('bg');
+            if (slider.id.includes('gainnoise') && slider.value > 0.1 ) {
+                theBackgroundForNoise.classList.add('visualNoise');
+            } else if (slider.id.includes('gainnoise') && slider.value <= 0.1) {
+                theBackgroundForNoise.classList.remove('visualNoise');
+            }
+        })
+
+        // the backgroud for gran
+        slider.addEventListener('pointerup', () => {
+            let theBackgroundForGran = document.getElementById('bgran');
+            if (slider.id.includes('gaingran') && slider.value > 0.1 ) {
+                theBackgroundForGran.classList.add('visualGran');
+            } else if (slider.id.includes('gaingran') && slider.value <= 0.1) {
+                theBackgroundForGran.classList.remove('visualGran');
+            }
+        })
 
         // Store the slider and text by name so we can access them later
         uiElements[param.id] = { slider, text };
