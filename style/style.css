@@ -322,7 +322,7 @@ input[type="range"]::-webkit-slider-thumb {
 #ondadelpaisa\/panambu {
     height: 5px;
     border: none;
-    transform: rotate(90deg);
+    transform: rotate(45deg);
     background-color: #FFCC70;
 }
 
@@ -417,7 +417,7 @@ input[type="range"]::-webkit-slider-thumb {
 #ondadelpaisa\/pantren {
     height: 5px;
     border: none;
-    transform: rotate(90deg);
+    transform: rotate(45deg);
     background-color: #4D3C77;
 }
 
