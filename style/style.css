@@ -16,6 +16,11 @@ html, body {
     height: 200vh;
 }
 */
+h1 {
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 h2, em {
     width: 100%;
     display: none;
@@ -793,7 +798,7 @@ input[type="range"]::-webkit-slider-thumb {
     height: 200vh;
     background: transparent url('../img/noise0.jpg') repeat 0 0;
     background-repeat: repeat;
-    animation: bg-animation 3s infinite; /* nombre de la animación */
+    animation: bg-animation 12s infinite; /* nombre de la animación */
     opacity: .3;
     visibility: visible;
     z-index: -1;
@@ -849,17 +854,17 @@ input[type="range"]::-webkit-slider-thumb {
     left: -50%;
     right: -50%;
     bottom: -50%;
-    width: 200%;
+    width: 300%;
     height: 200vh;
     background: transparent url('../img/agua.jpg') repeat 0 0;
     background-repeat: repeat;
-    animation: bg-animation-gran 21s infinite; /* nombre de la animación */
+    animation: bg-animation-agua 21s infinite; /* nombre de la animación */
     opacity: .3;
     visibility: visible;
     z-index: -1;
 }
 
-@keyframes bg-animation-gran {
+@keyframes bg-animation-agua {
       0% { transform: translate(0,0) }
       10% { transform: translate(-5%,-5%) }
       20% { transform: translate(-10%,5%) }

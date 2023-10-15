@@ -256,7 +256,7 @@ function loadPresets(device, patcher) {
     let presetSelect = document.getElementById("preset-select");
     presets.forEach((preset, index) => {
         const option = document.createElement("option");
-        option.innerText = preset.name; // CAMBIAR NOMBRE A TRIGGER
+        option.innerText = "Sound On"; // CAMBIAR NOMBRE A TRIGGER
         option.value = index;
         presetSelect.appendChild(option);
     });
