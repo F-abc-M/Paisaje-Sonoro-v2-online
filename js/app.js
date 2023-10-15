@@ -127,9 +127,9 @@ function makeSliders(device) {
         let slider = document.createElement("input");
         let text = document.createElement("input");
         let sliderContainer = document.createElement("div");
-        //sliderContainer.appendChild(label);
+        // sliderContainer.appendChild(label);
         sliderContainer.appendChild(slider);
-        //sliderContainer.appendChild(text);
+        // sliderContainer.appendChild(text);
 
         // Add a name for the label
         label.setAttribute("name", param.name);
@@ -150,7 +150,7 @@ function makeSliders(device) {
         surprise.addEventListener('pointerdown', () => {
             surprise.classList.add('surprise');
         })
-
+        // the rotate animation
         slider.addEventListener('pointerdown', () => {
             if (slider.id.includes('play') || slider.id.includes('stop')) {
                 slider.classList.add('rotate');
@@ -179,6 +179,19 @@ function makeSliders(device) {
             isDraggingSlider = false;
             slider.value = param.value;
             text.value = param.value.toFixed(3);
+            if ((slider.id.includes('ondacampaon') ||
+            slider.id.includes('ondasemaon') ||
+            slider.id.includes('ondaambuon') ||
+            slider.id.includes('ondatrenon') ||
+            slider.id.includes('ondavion')) && slider.value == 2) {
+                slider.classList.add('ondaon');
+            } else if ((slider.id.includes('ondacampaon') ||
+            slider.id.includes('ondasemaon') ||
+            slider.id.includes('ondaambuon') ||
+            slider.id.includes('ondatrenon') ||
+            slider.id.includes('ondavion')) && slider.value != 2) {
+                slider.classList.remove('ondaon');
+            }
         });
         slider.addEventListener("input", () => {
             let value = Number.parseFloat(slider.value);
