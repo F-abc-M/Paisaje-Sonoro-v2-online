@@ -2,13 +2,20 @@ html, body {
     margin: 0;
     padding: 0;
     position: fixed;
+    background-color: rgba(250, 243, 240, 1); /* checar opacidad */
 }
 
 #background {
     position: absolute;
     z-index: -1;
 }
-
+/*
+#agua {
+    background: url('../img/agua.jpg');
+    width: 200%;
+    height: 200vh;
+}
+*/
 h2, em {
     width: 100%;
     display: none;
@@ -18,6 +25,7 @@ h2, em {
 #rnbo-root {
     margin: 12px;
     max-width: 98vw;
+    height: 98vh;
     box-sizing: border-box;
 }
 
@@ -51,8 +59,7 @@ input[type="range"] {
     appearance: none; /* -webkit-appearance */
     width: auto;
     height: 21px;
-    background-color: #FFD1DA;
-    border: 7px solid rgb(34, 34, 34);
+    border: 7px solid;
     transition: 0.7s ease-in-out;
 }
 
@@ -60,104 +67,145 @@ input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 21px;
     height: 21px;
-    background-color: #FFF5E0;
-    border: 7px solid #22668D;
+    border: 7px solid;
     border-radius: 50%;
     cursor: grab;
     z-index: 3;
 }
 
 #gainnoise {
-    background-color: #272829;
+    background-color: #61677A;
+    border-color: #D8D9DA;
     width: 230px;
+    height: 44px;
+}
+
+#gainnoise::-webkit-slider-thumb {
+    background-color: #272829;
+    border: 7px solid #FFF6E0;
+    border-radius: 0px;
     height: 44px;
 }
 
 #cyclefreq {
     border-radius: 50px;
+    border-color: #61677A;
     transform: rotate(10deg);
     background-color: #D8D9DA;
 }
 
+#cyclefreq::-webkit-slider-thumb {
+    border-color: #FFF6E0;
+    background-color: #FFF6E0;
+}
+
 #phascycfreq {
     border-radius: 50px;
+    border-color: #D8D9DA;
     transform: rotate(-10deg);
+    background-color: #FFF6E0;
+}
+
+#phascycfreq::-webkit-slider-thumb {
+    border-color: #61677A;
     background-color: #61677A;
 }
 
 #ondadelpaisa\/ondacampaon {
     border-radius: 50%;
-    background-color: #FF8400;
+    border-color: #AAC8A7;
+    background-color: #C3EDC0;
 }
 
 #ondadelpaisa\/ondacampaon:hover {
     border-radius: 3px;
-    scale: 2;
-    rotate: 3deg;
-    border: none;
+}
+
+#ondadelpaisa\/ondacampaon::-webkit-slider-thumb {
+    background-color: #E9FFC2;
+    border-color: #FDFFAE;
 }
 
 #ondadelpaisa\/ondacamp {
     width: 80px;
     height: 80px;
     transform: rotate(90deg);
+    border-color: #FDFFAE;
     border-radius: 50% 50% 50% 0;
-    background-color: #4F200D;
+    background-color: #AAC8A7;
 }
 
 #ondadelpaisa\/ondacamp:hover {
     border-radius: 50% 50% 0 50%;
 }
 
+#ondadelpaisa\/ondacamp::-webkit-slider-thumb {
+    background-color: #C3EDC0;
+    border-radius: 50% 50% 50% 0;
+    border-color: #E9FFC2;
+}
+
 #ondadelpaisa\/phascyclecamp {
     width: 80px;
     height: 80px;
     transform: rotate(270deg);
+    border-color: #C3EDC0;
     border-radius: 50% 50% 50% 0;
-    background-color: #FFD93D;
+    background-color: #FDFFAE;
 }
 
 #ondadelpaisa\/phascyclecamp:hover {
     border-radius: 50% 50% 0 50%;
 }
 
+#ondadelpaisa\/phascyclecamp::-webkit-slider-thumb {
+    background-color: #E9FFC2;
+    border-radius: 50% 50% 50% 0;
+    border-color: #AAC8A7;
+}
+
 #ondadelpaisa\/pancamp {
     height: 5px;
     border: none;
     transform: rotate(90deg);
-    background-color: #FF8400;
+    background-color: #C3EDC0;
 }
 
 #ondadelpaisa\/pancamp:hover {
-    rotate: 98deg;
+    rotate: 7deg;
     scale: 1.2;
 }
 
 #ondadelpaisa\/pancamp::-webkit-slider-thumb {
     background-color: transparent;
+    border-color: #C3EDC0;
     border-top: 17px solid transparent;
-    border-right: 17px solid lightblue;
+    border-right: 17px solid #AAC8A7;
     border-bottom: 17px solid transparent;
 }
 
 #ondadelpaisa\/ondasemaon {
+    border-color: #F57328;
     border-radius: 50%;
-    background-color: #FF1700;
+    background-color: #CC3636;
 }
 
 #ondadelpaisa\/ondasemaon:hover {
     border-radius: 3px;
-    rotate: -57deg;
-    scale: 2;
-    border: none;
+}
+
+#ondadelpaisa\/ondasemaon::-webkit-slider-thumb {
+    background-color: #FFE9A0;
+    border-color: #367E18;
 }
 
 #ondadelpaisa\/ondasema {
     width: 80px;
     height: 80px;
     transform: rotate(90deg);
+    border-color: #CC3636;
     border-radius: 50% 50% 50% 0;
-    background-color: #FF8E00;
+    background-color: #F57328;
 }
 
 #ondadelpaisa\/ondasema:hover {
@@ -165,12 +213,19 @@ input[type="range"]::-webkit-slider-thumb {
     rotate: 30deg;
 }
 
+#ondadelpaisa\/ondasema::-webkit-slider-thumb {
+    border-radius: 50% 50% 50% 0;
+    background-color: #367E18;
+    border-color: #FFE9A0;
+}
+
 #ondadelpaisa\/phascysema {
     width: 80px;
     height: 80px;
     transform: rotate(270deg);
+    border-color: #F57328;
     border-radius: 50% 50% 50% 0;
-    background-color: #FFE400;
+    background-color: #FFE9A0;
 }
 
 #ondadelpaisa\/phascysema:hover {
@@ -178,41 +233,52 @@ input[type="range"]::-webkit-slider-thumb {
     rotate: -7deg;
 }
 
+#ondadelpaisa\/phascysema::-webkit-slider-thumb {
+    border-radius: 50% 50% 50% 0;
+    background-color: #CC3636;
+    border-color: #367E18;
+}
+
 #ondadelpaisa\/pansema {
     height: 5px;
     border: none;
     transform: rotate(90deg);
-    background-color: #06FF00;
+    background-color: #367E18;
 }
 
 #ondadelpaisa\/pansema:hover {
-    rotate: -365deg;
+    rotate: 21deg;
     scale: 1.5;
 }
 
 #ondadelpaisa\/pansema::-webkit-slider-thumb {
     background-color: transparent;
+    border-color: #CC3636;
     border-top: 17px solid transparent;
-    border-right: 17px solid lightblue;
+    border-right: 17px solid #FFE9A0;
     border-bottom: 17px solid transparent;
 }
 
 #ondadelpaisa\/ondaambuon {
     border-radius: 50%;
+    border-color: #FFFADD;
     background-color: #FFCC70;
 }
 
 #ondadelpaisa\/ondaambuon:hover {
     border-radius: 3px;
-    rotate: 57deg;
-    scale: 2;
-    border: none;
+}
+
+#ondadelpaisa\/ondaambuon::-webkit-slider-thumb {
+    border-color: #8ECDDD;
+    background-color: #4F709C;
 }
 
 #ondadelpaisa\/ondaambu {
     width: 80px;
     height: 80px;
     transform: rotate(90deg);
+    border-color: #8ECDDD;
     border-radius: 50% 50% 50% 0;
     background-color: #FFFADD;
 }
@@ -222,10 +288,17 @@ input[type="range"]::-webkit-slider-thumb {
     rotate: -9deg;
 }
 
+#ondadelpaisa\/ondaambu::-webkit-slider-thumb {
+    border-radius: 50% 50% 50% 0;
+    border-color: #4F709C;
+    background-color: #FFCC70;
+}
+
 #ondadelpaisa\/phascycambu {
     width: 80px;
     height: 80px;
     transform: rotate(270deg);
+    border-color: #22668D;
     border-radius: 50% 50% 50% 0;
     background-color: #8ECDDD;
 }
@@ -235,22 +308,29 @@ input[type="range"]::-webkit-slider-thumb {
     rotate: 13deg;
 }
 
+#ondadelpaisa\/phascycambu::-webkit-slider-thumb {
+    border-radius: 50% 50% 50% 0;
+    border-color: #FFCC70;
+    background-color: #FFFADD;
+}
+
 #ondadelpaisa\/panambu {
     height: 5px;
     border: none;
     transform: rotate(90deg);
-    background-color: #4F709C;
+    background-color: #FFCC70;
 }
 
 #ondadelpaisa\/panambu:hover {
-    rotate: -65deg;
+    rotate: -13deg;
     scale: 1.2;
 }
 
 #ondadelpaisa\/panambu::-webkit-slider-thumb {
     background-color: transparent;
+    border-color: #8ECDDD;
     border-top: 17px solid transparent;
-    border-right: 17px solid lightblue;
+    border-right: 17px solid  #22668D;
     border-bottom: 17px solid transparent;
 }
 
@@ -258,39 +338,50 @@ input[type="range"]::-webkit-slider-thumb {
     height: 5px;
     border: none;
     transform: rotate(270deg);
-    background-color: #22668D;
+    background-color: #8ECDDD;
 }
 
 #ondadelpaisa\/panambu2:hover {
-    rotate: 65deg;
+    rotate: -13deg;
     scale: 1.7;
 }
 
 #ondadelpaisa\/panambu2::-webkit-slider-thumb {
     background-color: transparent;
+    border-color: #FFFADD;
     border-top: 17px solid transparent;
-    border-right: 17px solid lightblue;
+    border-right: 17px solid #FFCC70;
     border-bottom: 17px solid transparent;
 }
 
 #ondadelpaisa\/ondatrenon {
     border-radius: 50%;
-    background-color: #E5E5CB;
+    border-color: #3F1D38;
+    background-color: #E19898;
 }
 
 #ondadelpaisa\/ondatrenon:hover {
     border-radius: 3px;
-    rotate: 92deg;
-    scale: 2;
-    border: none;
+}
+
+#ondadelpaisa\/ondatrenon::-webkit-slider-thumb {
+    border-color: #A2678A;
+    background-color: #4D3C77;
 }
 
 #ondadelpaisa\/ondatren {
     width: 80px;
     height: 80px;
     transform: rotate(90deg);
+    border-color: #E19898;
     border-radius: 50% 50% 50% 0;
-    background-color: #1A120B;
+    background-color: #A2678A;
+}
+
+#ondadelpaisa\/ondatren::-webkit-slider-thumb {
+    border-radius: 50% 50% 50% 0;
+    border-color: #4D3C77;
+    background-color: #3F1D38;
 }
 
 #ondadelpaisa\/ondatren:hover {
@@ -302,8 +393,9 @@ input[type="range"]::-webkit-slider-thumb {
     width: 80px;
     height: 80px;
     transform: rotate(270deg);
+    border-color: #4D3C77;
     border-radius: 50% 50% 50% 0;
-    background-color: #D5CEA3;
+    background-color: #3F1D38;
 }
 
 #ondadelpaisa\/phascytren:hover {
@@ -311,35 +403,45 @@ input[type="range"]::-webkit-slider-thumb {
     rotate: -31deg;
 }
 
+#ondadelpaisa\/phascytren::-webkit-slider-thumb {
+    border-radius: 50% 50% 50% 0;
+    border-color: #A2678A;
+    background-color: #E19898;
+}
+
 #ondadelpaisa\/pantren {
     height: 5px;
     border: none;
     transform: rotate(90deg);
-    background-color: #3C2A21;
+    background-color: #4D3C77;
 }
 
 #ondadelpaisa\/pantren:hover {
-    rotate: -172deg;
+    rotate: -8deg;
     scale: 1.2;
 }
 
 #ondadelpaisa\/pantren::-webkit-slider-thumb {
     background-color: transparent;
+    border-color: #E19898;
     border-top: 17px solid transparent;
-    border-right: 17px solid lightblue;
+    border-right: 17px solid #A2678A;
     border-bottom: 17px solid transparent;
 }
 
 #ondadelpaisa\/ondavion {
     border-radius: 50%;
     background-color: #B6FFFA;
+    border-color: #98E4FF;
 }
 
 #ondadelpaisa\/ondavion:hover {
     border-radius: 3px;
-    rotate: -192deg;
-    scale: 2;
-    border: none;
+}
+
+#ondadelpaisa\/ondavion::-webkit-slider-thumb {
+    border-color: #687EFF;
+    background-color: #80B3FF;
 }
 
 #ondadelpaisa\/ondaavio {
@@ -348,6 +450,7 @@ input[type="range"]::-webkit-slider-thumb {
     transform: rotate(90deg);
     border-radius: 50% 50% 50% 0;
     background-color: #687EFF;
+    border-color: #80B3FF;
 }
 
 #ondadelpaisa\/ondaavio:hover {
@@ -355,11 +458,18 @@ input[type="range"]::-webkit-slider-thumb {
     rotate: -31deg;
 }
 
+#ondadelpaisa\/ondaavio::-webkit-slider-thumb {
+    border-radius: 50% 50% 50% 0;
+    border-color: #B6FFFA;
+    background-color: #98E4FF;
+}
+
 #ondadelpaisa\/phasavio {
     width: 80px;
     height: 80px;
     transform: rotate(270deg);
     border-radius: 50% 50% 50% 0;
+    border-color: #B6FFFA;
     background-color: #80B3FF;
 }
 
@@ -368,128 +478,176 @@ input[type="range"]::-webkit-slider-thumb {
     rotate: 31deg;
 }
 
+#ondadelpaisa\/phasavio::-webkit-slider-thumb {
+    border-radius: 50% 50% 50% 0;
+    border-color: #98E4FF;
+    background-color: #687EFF;
+}
+
 #ondadelpaisa\/panavion {
     height: 5px;
     border: none;
     transform: rotate(90deg);
-    background-color: #98E4FF;
+    background-color: #687EFF;
 }
 
 #ondadelpaisa\/panavion:hover {
-    rotate: 198deg;
+    rotate: 8deg;
     scale: 1.7;
 }
 
 #ondadelpaisa\/panavion::-webkit-slider-thumb {
     background-color: transparent;
+    border-color: #98E4FF;
     border-top: 17px solid transparent;
-    border-right: 17px solid lightblue;
+    border-right: 17px solid #B6FFFA;
     border-bottom: 17px solid transparent;
 }
 
 #paisaje\/gainwave {
-    background-color: #1A120B;
+    background-color: #B6FFFA;
+    border-color: #FFE9A0;
     width: 230px;
     height: 44px;
 }
 
-#paisaje\/gainwave::-webkit-slider-thumb,
-#gainnoise::-webkit-slider-thumb,
-#thegranulator\/gaingran::-webkit-slider-thumb {
-    background-color: #FF355D;
-    border: 7px solid #22668D;
+#paisaje\/gainwave:hover {
+    background-color: #FFE9A0;
+    border-color: #8ECDDD;
+}
+
+#paisaje\/gainwave::-webkit-slider-thumb {
+    background-color: #4D3C77;
+    border: 7px solid #CC3636;
     border-radius: 0px;
     height: 44px;
+    transition: 0.7s ease-in-out;
+}
+
+#paisaje\/gainwave::-webkit-slider-thumb:hover {
+    background-color: #F57328;
+    border-color: #AAC8A7;
 }
 
 #paisaje\/playcamp {
-    background-color: #FFD93D;
+    background-color: #AAC8A7;
+    border-color: #FDFFAE;
 }
 
 #paisaje\/stopcamp {
-    background-color: #4F200D;
+    background-color: #E9FFC2;
+    border-color: #C3EDC0;
 }
 
 #paisaje\/numcamp {
-    background-color: #F6F1E9;
+    border-color: #E9FFC2;
+    background-color: #FDFFAE;
 }
 
 #paisaje\/numcamp:hover {
-    scale: 1.7;
-    border: none;
     border-radius: 3px;
+}
+
+#paisaje\/numcamp::-webkit-slider-thumb {
+    border-radius: 0px;
+    width: 10px;
+    border-color: #AAC8A7;
 }
 
 #paisaje\/playsema {
-    background-color: #06FF00;
+    background-color: #367E18;
+    border-color: #FFE9A0;
 }
 
 #paisaje\/stopsema {
-    background-color: #FF1700;
+    background-color: #CC3636;
+    border-color: #367E18;
 }
 
 #paisaje\/numsema {
-    background-color: #FFE400;
+    background-color: #FFE9A0;
+    border-color: #F57328;
 }
 
-#paisaje\/numsema:hover {
-    scale: 1.7;
-    border: none;
-    border-radius: 3px;
+#paisaje\/numsema::-webkit-slider-thumb {
+    border-radius: 0px;
+    width: 10px;
+    border-color: #367E18;
 }
 
 #paisaje\/playamb {
     background-color: #22668D;
+    border-color: #FFFADD;
 }
 
 #paisaje\/stopamb {
-    background-color: #FFCC70;
+    background-color: #8ECDDD;
+    border-color: #FFCC70;
 }
 
 #paisaje\/numamb {
     background-color: #8ECDDD;
+    border-color: #22668D;
 }
 
 #paisaje\/numamb:hover {
-    scale: 1.7;
-    border: none;
     border-radius: 3px;
+}
+
+#paisaje\/numamb::-webkit-slider-thumb {
+    border-radius: 0px;
+    width: 10px;
+    border-color: #FFCC70;
 }
 
 #paisaje\/playtren {
-    background-color: #D5CEA3;
+    background-color: #4D3C77;
+    border-color: #3F1D38;
 }
 
 #paisaje\/stoptren {
-    background-color: #3C2A21;
+    background-color: #A2678A;
+    border-color: #E19898;
 }
 
 #paisaje\/numtren {
-    background-color: #E5E5CB;
+    background-color: #3F1D38;
+    border-color: #4D3C77;
 }
 
 #paisaje\/numtren:hover {
-    scale: 1.7;
-    border: none;
     border-radius: 3px;
+}
+
+#paisaje\/numtren::-webkit-slider-thumb {
+    border-radius: 0px;
+    width: 10px;
+    border-color: #E19898;
 }
 
 #paisaje\/playavion {
     background-color: #687EFF;
+    border-color: #B6FFFA;
 }
 
 #paisaje\/stopavion {
     background-color: #B6FFFA;
+    border-color: #98E4FF;
 }
 
 #paisaje\/numavion {
     background-color: #80B3FF;
+    border-color: #B6FFFA;
 }
 
 #paisaje\/numavion:hover {
-    scale: 1.7;
-    border: none;
     border-radius: 3px;
+}
+
+#paisaje\/numavion::-webkit-slider-thumb {
+    border-radius: 0px;
+    width: 10px;
+    border-color: #687EFF;
 }
 
 #paisaje\/playcamp,
@@ -526,28 +684,62 @@ input[type="range"]::-webkit-slider-thumb {
 #thegranulator\/density {
     border-radius: 50px 0 0 0;
     background-color: #F94C66;
+    border-color: #FFC54D;
+}
+
+#thegranulator\/density::-webkit-slider-thumb {
+    border-radius: 50px 0 0 0;
+    border-color: #53BF9D;
+    background-color: #BD4291;
 }
 
 #thegranulator\/grain_size {
     border-radius: 0 50px 0 0;
     background-color: #BD4291;
+    border-color: #53BF9D;
+}
+
+#thegranulator\/grain_size::-webkit-slider-thumb {
+    border-radius: 0 50px 0 0;
+    border-color: #FFC54D;
+    background-color: #F94C66;
 }
 
 #thegranulator\/pitch {
     border-radius: 0 0 0 50px;
     background-color: #BD4291;
+    border-color: #53BF9D;
+}
+
+#thegranulator\/pitch::-webkit-slider-thumb {
+    border-radius: 0 0 0 50px;
+    border-color: #FFC54D;
+    background-color: #F94C66;
 }
 
 #thegranulator\/position {
     border-radius: 0 0 50px 0;
     background-color: #F94C66;
+    border-color: #FFC54D;
+}
+
+#thegranulator\/position::-webkit-slider-thumb {
+    border-radius: 0 0 50px 0;
+    border-color: #53BF9D;
+    background-color: #BD4291;
 }
 
 #thegranulator\/spray {
     height: 5px;
     border: none;
     transform: rotate(45deg);
-    background-color: #FFC54D;
+    background-color: #BD4291;
+}
+
+#thegranulator\/spray::-webkit-slider-thumb {
+    width: 10px;
+    border-radius: 3px;
+    border-color: #FFC54D;
 }
 
 #thegranulator\/spread {
@@ -557,16 +749,37 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: #FFC54D;
 }
 
+#thegranulator\/spread::-webkit-slider-thumb {
+    width: 10px;
+    border-radius: 3px;
+    border-color: #F94C66;
+}
+
 #thegranulator\/stereo_spread {
     height: 5px;
     border: none;
     transform: rotate(135deg);
+    background-color: #F94C66;
+}
+
+#thegranulator\/stereo_spread::-webkit-slider-thumb {
+    width: 10px;
+    border-radius: 3px;
+    border-color: #53BF9D;
     background-color: #FFC54D;
 }
 
 #thegranulator\/gaingran {
     background-color: #53BF9D;
+    border-color: #BD4291;
     width: 230px;
+    height: 44px;
+}
+
+#thegranulator\/gaingran::-webkit-slider-thumb {
+    background-color: #F94C66;
+    border: 7px solid #FFC54D;
+    border-radius: 0px;
     height: 44px;
 }
 
@@ -610,7 +823,7 @@ input[type="range"]::-webkit-slider-thumb {
     height: 200vh;
     background: transparent url('../img/noise3.jpg') repeat 0 0;
     background-repeat: repeat;
-    animation: bg-animation-gran 13s infinite; /* nombre de la animación */
+    animation: bg-animation-gran 44s infinite; /* nombre de la animación */
     opacity: .3;
     visibility: visible;
     z-index: -1;
@@ -630,10 +843,40 @@ input[type="range"]::-webkit-slider-thumb {
       100% { transform: translate(0, 0) }
 }
 
+.agua {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('../img/agua.jpg') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation-gran 21s infinite; /* nombre de la animación */
+    opacity: .3;
+    visibility: visible;
+    z-index: -1;
+}
+
+@keyframes bg-animation-gran {
+      0% { transform: translate(0,0) }
+      10% { transform: translate(-5%,-5%) }
+      20% { transform: translate(-10%,5%) }
+      30% { transform: translate(5%,-10%) }
+      40% { transform: translate(-5%,15%) }
+      50% { transform: translate(-10%,5%) }
+      60% { transform: translate(15%,0) }
+      70% { transform: translate(0,10%) }
+      80% { transform: translate(-15%,0) }
+      90% { transform: translate(10%,5%) }
+      100% { transform: translate(0, 0) }
+}
+/*
 .surprise {
     animation: the-surprise 7s;
 }
-
+*/
 @keyframes the-surprise {
     0% {
         scale: 0;
@@ -668,52 +911,3 @@ input[type="range"]::-webkit-slider-thumb {
         transform: rotate(180deg);
     }
 }
-/*
-.gains {
-    background-color: tomato;
-    width: auto;
-    height: auto;
-}
-
-.allNoise {
-    background-color: gray;
-    width: auto;
-    height: auto;
-}
-
-.campanas {
-    background-color: yellow;
-    width: auto;
-    height: auto;
-}
-
-.semaforo {
-    background-color: yellowgreen;
-    width: auto;
-    height: auto;
-}
-
-.ambulancia {
-    background-color: crimson;
-    width: auto;
-    height: auto;
-}
-
-.tren {
-    background-color: orange;
-    width: auto;
-    height: auto;
-}
-
-.avion {
-    background-color: lightseagreen;
-    width: auto;
-    height: auto;
-}
-
-.granular {
-    background-color: purple;
-    width: auto;
-    height: auto;
-}
-*/

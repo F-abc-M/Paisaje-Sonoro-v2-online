@@ -160,64 +160,6 @@ function makeSliders(device) {
             }
         })
 
-        /* divs por grupos de elementos
-        let gainDiv = document.createElement("div");
-        sliderContainer.appendChild(gainDiv);
-        gainDiv.classList.add('gains');
-        if (slider.id.includes('gain')) {
-            gainDiv.append(slider);
-        }
-
-        let noiseDiv = document.createElement("div");
-        sliderContainer.appendChild(noiseDiv);
-        noiseDiv.classList.add("allNoise");
-        if (slider.id.includes('freq')) {
-            noiseDiv.append(slider);
-        }
-
-        let campanasDiv = document.createElement("div");
-        sliderContainer.appendChild(campanasDiv);
-        campanasDiv.classList.add("campanas");
-        if (slider.id.includes('camp')) {
-            campanasDiv.append(slider);
-        }
-
-        let semaforoDiv = document.createElement("div");
-        sliderContainer.appendChild(semaforoDiv);
-        semaforoDiv.classList.add("semaforo");
-        if (slider.id.includes('sema')) {
-            semaforoDiv.append(slider);
-        }
-
-        let ambulanciaDiv = document.createElement("div");
-        sliderContainer.appendChild(ambulanciaDiv);
-        ambulanciaDiv.classList.add("ambulancia");
-        if (slider.id.includes('amb')) {
-            ambulanciaDiv.append(slider);
-        }
-
-        let trenDiv = document.createElement("div");
-        sliderContainer.appendChild(trenDiv);
-        trenDiv.classList.add("tren");
-        if (slider.id.includes('tren')) {
-            trenDiv.append(slider);
-        }
-
-        let avionDiv = document.createElement("div");
-        sliderContainer.appendChild(avionDiv);
-        avionDiv.classList.add("avion");
-        if (slider.id.includes('avio')) {
-            avionDiv.append(slider);
-        }
-
-        let granularDiv = document.createElement("div");
-        sliderContainer.appendChild(granularDiv);
-        granularDiv.classList.add("granular");
-        if (slider.id.includes('granulator')) {
-            granularDiv.append(slider);
-        }
-        termina sección de divs */
-
         if (param.steps > 1) {
             slider.setAttribute("step", (param.max - param.min) / (param.steps - 1));
         } else {
@@ -261,19 +203,29 @@ function makeSliders(device) {
         // the backgroud for noise
         slider.addEventListener('pointerup', () => {
             let theBackgroundForNoise = document.getElementById('bg');
-            if (slider.id.includes('gainnoise') && slider.value > 0.1 ) {
+            if (slider.id.includes('gainnoise') && slider.value > 0.01 ) {
                 theBackgroundForNoise.classList.add('visualNoise');
-            } else if (slider.id.includes('gainnoise') && slider.value <= 0.1) {
+            } else if (slider.id.includes('gainnoise') && slider.value <= 0.01) {
                 theBackgroundForNoise.classList.remove('visualNoise');
+            }
+        })
+
+        // the backgroud for paisaje
+        slider.addEventListener('pointerup', () => {
+            let theBackgroundForPaisaje = document.getElementById('agua');
+            if (slider.id.includes('gainwave') && slider.value > 0.01 ) {
+                theBackgroundForPaisaje.classList.add('agua');
+            } else if (slider.id.includes('gainwave') && slider.value <= 0.01) {
+                theBackgroundForPaisaje.classList.remove('agua');
             }
         })
 
         // the backgroud for gran
         slider.addEventListener('pointerup', () => {
             let theBackgroundForGran = document.getElementById('bgran');
-            if (slider.id.includes('gaingran') && slider.value > 0.1 ) {
+            if (slider.id.includes('gaingran') && slider.value > 0.01 ) {
                 theBackgroundForGran.classList.add('visualGran');
-            } else if (slider.id.includes('gaingran') && slider.value <= 0.1) {
+            } else if (slider.id.includes('gaingran') && slider.value <= 0.01) {
                 theBackgroundForGran.classList.remove('visualGran');
             }
         })
