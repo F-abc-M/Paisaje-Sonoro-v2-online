@@ -145,11 +145,6 @@ function makeSliders(device) {
         slider.setAttribute("min", param.min);
         slider.setAttribute("max", param.max);
 
-        // the first animation
-        let surprise = document.querySelector('body');
-        surprise.addEventListener('pointerdown', () => {
-            surprise.classList.add('surprise');
-        })
         // the rotate animation
         slider.addEventListener('pointerdown', () => {
             if (slider.id.includes('play') || slider.id.includes('stop')) {
@@ -179,20 +174,29 @@ function makeSliders(device) {
             isDraggingSlider = false;
             slider.value = param.value;
             text.value = param.value.toFixed(3);
-            if ((slider.id.includes('ondacampaon') ||
-            slider.id.includes('ondasemaon') ||
-            slider.id.includes('ondaambuon') ||
-            slider.id.includes('ondatrenon') ||
-            slider.id.includes('ondavion')) && slider.value == 2) {
-                slider.classList.add('ondaon');
-            } else if ((slider.id.includes('ondacampaon') ||
-            slider.id.includes('ondasemaon') ||
-            slider.id.includes('ondaambuon') ||
-            slider.id.includes('ondatrenon') ||
-            slider.id.includes('ondavion')) && slider.value != 2) {
-                slider.classList.remove('ondaon');
+            if (slider.id.includes('ondacampaon') && slider.value == 2) {
+                slider.classList.add('ondaoncampana');
+            } else if (slider.id.includes('ondacampaon') && slider.value != 2) {
+                slider.classList.remove('ondaoncampana');
+            } else if (slider.id.includes('ondasemaon') && slider.value == 2) {
+                slider.classList.add('ondasemaforo');
+            } else if (slider.id.includes('ondasemaon') && slider.value != 2) {
+                slider.classList.remove('ondasemaforo');
+            } else if (slider.id.includes('ondaambuon') && slider.value == 2) {
+                slider.classList.add('ondaambulancia');
+            } else if (slider.id.includes('ondaambuon') && slider.value != 2) {
+                slider.classList.remove('ondaambulancia');
+            } else if (slider.id.includes('ondatrenon') && slider.value == 2) {
+                slider.classList.add('ondatren');
+            } else if (slider.id.includes('ondatrenon') && slider.value != 2) {
+                slider.classList.remove('ondatren');
+            } else if (slider.id.includes('ondavion') && slider.value == 2) {
+                slider.classList.add('ondaavion');
+            } else if (slider.id.includes('ondavion') && slider.value != 2) {
+                slider.classList.remove('ondaavion');
             }
         });
+
         slider.addEventListener("input", () => {
             let value = Number.parseFloat(slider.value);
             param.value = value;

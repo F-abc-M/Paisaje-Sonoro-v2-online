@@ -134,6 +134,28 @@ input[type="range"]::-webkit-slider-thumb {
     border-color: #FDFFAE;
 }
 
+.ondaoncampana {
+    animation: campana 7s ease-in-out infinite;
+}
+
+@keyframes campana {
+    0% {
+        background-color: #C3EDC0;
+    }
+    25% {
+        background-color: #E9FFC2;
+    }
+    50% {
+        background-color: #FDFFAE;
+    }
+    75% {
+        background-color: #AAC8A7;
+    }
+    100% {
+        background-color: #C3EDC0;
+    }
+}
+
 #ondadelpaisa\/ondacamp {
     width: 80px;
     height: 80px;
@@ -205,6 +227,28 @@ input[type="range"]::-webkit-slider-thumb {
 #ondadelpaisa\/ondasemaon::-webkit-slider-thumb {
     background-color: #FFE9A0;
     border-color: #367E18;
+}
+
+.ondasemaforo {
+    animation: semaforo 7s ease-in-out infinite;
+}
+
+@keyframes semaforo {
+    0% {
+        background-color: #CC3636;
+    }
+    25% {
+        background-color: #F57328;
+    }
+    50% {
+        background-color: #367E18;
+    }
+    75% {
+        background-color: #FFE9A0;
+    }
+    100% {
+        background-color: #CC3636;
+    }
 }
 
 #ondadelpaisa\/ondasema {
@@ -280,6 +324,28 @@ input[type="range"]::-webkit-slider-thumb {
 #ondadelpaisa\/ondaambuon::-webkit-slider-thumb {
     border-color: #8ECDDD;
     background-color: #4F709C;
+}
+
+.ondaambulancia {
+    animation: ambulancia 7s ease-in-out infinite;
+}
+
+@keyframes ambulancia {
+    0% {
+        background-color: #FFCC70;
+    }
+    25% {
+        background-color: #8ECDDD;
+    }
+    50% {
+        background-color: #FFFADD;
+    }
+    75% {
+        background-color: #4F709C;
+    }
+    100% {
+        background-color: #FFCC70;
+    }
 }
 
 #ondadelpaisa\/ondaambu {
@@ -377,6 +443,28 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: #4D3C77;
 }
 
+.ondatren {
+    animation: tren 7s ease-in-out infinite;
+}
+
+@keyframes tren {
+    0% {
+        background-color: #E19898;
+    }
+    25% {
+        background-color: #A2678A;
+    }
+    50% {
+        background-color: #3F1D38;
+    }
+    75% {
+        background-color: #4D3C77;
+    }
+    100% {
+        background-color: #E19898;
+    }
+}
+
 #ondadelpaisa\/ondatren {
     width: 80px;
     height: 80px;
@@ -450,6 +538,28 @@ input[type="range"]::-webkit-slider-thumb {
 #ondadelpaisa\/ondavion::-webkit-slider-thumb {
     border-color: #687EFF;
     background-color: #80B3FF;
+}
+
+.ondaavion {
+    animation: avion 7s ease-in-out infinite;
+}
+
+@keyframes avion {
+    0% {
+        background-color: #B6FFFA;
+    }
+    25% {
+        background-color: #80B3FF;
+    }
+    50% {
+        background-color: #687EFF;
+    }
+    75% {
+        background-color: #98E4FF;
+    }
+    100% {
+        background-color: #B6FFFA;
+    }
 }
 
 #ondadelpaisa\/ondaavio {
@@ -880,31 +990,6 @@ input[type="range"]::-webkit-slider-thumb {
       90% { transform: translate(10%,5%) }
       100% { transform: translate(0, 0) }
 }
-/*
-.surprise {
-    animation: the-surprise 7s;
-}
-*/
-@keyframes the-surprise {
-    0% {
-        scale: 1;
-    }
-    25% {
-        scale: 70%;
-        rotate: 90deg;
-        opacity: 0.25;
-    }
-    50% {
-        scale: 150%;
-        rotate: 180deg;
-        opacity: 0.5;
-    }
-    100% {
-        scale: 1;
-        rotate: 360deg;
-        opacity: 1;
-    }
-}
 
 .rotate {
     transition: all 0.7s ease-in-out;
@@ -922,13 +1007,4 @@ input[type="range"]::-webkit-slider-thumb {
 
 .ondaon {
     animation: onda 12s linear infinite;
-}
-
-@keyframes onda {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: -360deg;
-    }
 }
