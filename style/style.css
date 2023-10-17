@@ -1,8 +1,16 @@
 html, body {
     margin: 0;
     padding: 0;
-    position: fixed;
+    position: relative; /* fixed */
     background-color: rgba(250, 243, 240, 1); /* checar opacidad */
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #background {
@@ -32,8 +40,6 @@ h2, em {
 
 #rnbo-root {
     margin: 12px;
-    max-width: 98vw;
-    height: 98vh;
     box-sizing: border-box;
 }
 
