@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    background: url('../img/agua3.jpg');
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFADD;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(36, 36, 36, 0.7);
+    padding: 0 12px 12px 12px;
+    border-radius: 12px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFADD;
+}
